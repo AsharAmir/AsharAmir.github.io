@@ -1,0 +1,581 @@
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ECEFF1; /* Material UI Grey 100 */
+    color: #37474F; /* Material UI Blue Grey 800 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    background-color: #FFFFFF; /* Material UI White */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 100%;
+    background-color: #1565C0; /* Material UI Blue 700 */
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.sidebar .logo {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Menu Styling */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+/* Link Styling */
+.sidebar ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 8px;
+    background-color: #1E88E5; /* Material UI Blue 600 */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effects */
+.sidebar ul li a:hover {
+    background-color: #FFFFFF;
+    color: #1565C0; /* Material UI Blue 700 */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Horizontal line styling */
+.sidebar hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ECEFF1; /* Material UI Grey 100 */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #37474F; /* Material UI Blue Grey 800 */
+}
+
+/* Search bar styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+
+#cityInput {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #B0BEC5; /* Material UI Blue Grey 400 */
+    margin-right: 5px;
+    width: 100%;
+    max-width: 450px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    background-color: #1976D2; /* Material UI Blue 500 */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Units toggle */
+.units-toggle {
+    display: flex;
+    margin-top: 10px;
+}
+
+.unit {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #B0BEC5; /* Material UI Blue Grey 400 */
+    border-radius: 8px;
+    margin-left: 10px;
+    background-color: #F5F5F5; /* Material UI Grey 200 */
+}
+
+.unit.active {
+    background-color: #1976D2; /* Material UI Blue 500 */
+    color: #FFFFFF;
+}
+
+.filter-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+.filter-btn {
+    padding: 8px 12px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    }
+
+.filter-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Current weather */
+.current-weather {
+    background-color: #CFD8DC; /* Material UI Blue Grey 100 */
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Makes the widget sticky */
+    top: 10px; /* Sticks at the top of the viewport when scrolled */
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    z-index: 1000; /* Ensures the widget stays on top when sticky */
+}
+
+.city-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.temperature {
+    display: flex;
+    align-items: center;
+}
+
+.temp-main {
+    font-size: 2.5rem;
+    margin-right: 10px;
+}
+
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.city-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#cityName {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.temp-sub {
+    font-size: 1rem;
+    color: #78909C; /* Material UI Blue Grey 300 */
+}
+
+/* Shrink effect when scrolling */
+
+.shrunk .temp-main {
+    font-size: 1rem; /* Shrink the temperature font size */
+}
+
+.shrunk .weather-icon {
+    width: 100px;
+    height: 100px; 
+}
+
+/* Forecast */
+.forecast {
+    padding: 20px;
+    background-color: #CFD8DC; /* Material UI Blue Grey 100 */
+    margin: 40px 0;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.forecast-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.forecast-details div {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.forecast-details p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* Weather details */
+.weather-details {
+    margin: 10px 0 50px;
+    padding: 20px;
+    background-color: #CFD8DC; /* Material UI Blue Grey 100 */
+    border-radius: 12px;
+}
+
+.weather-details h3 {
+    text-transform: uppercase;
+}
+
+/* Detail grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 20px;
+    justify-items: center;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.detail-item {
+    text-align: center;
+    background-color: #E0E0E0; /* Material UI Grey 300 */
+    padding: 30px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+}
+
+.detail-item:hover {
+    background-color: #E0E0E0CC;
+}
+
+.detail-item p {
+    font-size: 18px;
+    margin: 0;
+    color: #37474F; /* Material UI Blue Grey 800 */
+}
+
+/* Charts */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.chart {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    background-color: #CFD8DC; /* Material UI Blue Grey 100 */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.user-profile {
+    background-color: #1976D2; /* Material UI Blue 500 */
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Forecast Table */
+#forecastTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#forecastTable th,
+#forecastTable td {
+    padding: 10px;
+    border: 1px solid #B0BEC5; /* Material UI Blue Grey 400 */
+    text-align: center;
+}
+
+#forecastTable th {
+    background-color: #1976D2; /* Material UI Blue 500 */
+    color: #FFFFFF;
+}
+
+/* Chatbot Widget */
+.chatbot-widget {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    right: 20px; /* Adjust the distance from the right */
+    width: 280px; /* Adjust the width to make it smaller */
+    background-color: #CFD8DC; /* Material UI Blue Grey 100 */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better visibility */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.chatbot-widget h2{
+    margin-bottom: 10px;
+}
+
+/* Chat container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+/* Chat box */
+#chatBox {
+    height: 150px; /* Reduced height */
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #B0BEC5; /* Material UI Blue Grey 400 */
+    margin-bottom: 10px;
+    font-size: 14px; /* Smaller font size */
+}
+
+/* Chat input */
+#chatInput {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #B0BEC5; /* Material UI Blue Grey 400 */
+    margin-right: 5px;
+    flex: 1;
+    font-size: 14px; /* Smaller font size */
+}
+
+/* Send button */
+#sendBtn {
+    padding: 8px 12px; /* Smaller padding */
+    background-color: #1976D2; /* Material UI Blue 500 */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size */
+    transition: background-color 0.3s;
+}
+
+/* Send button hover effect */
+#sendBtn:hover {
+    background-color: #1565C0; /* Darker blue on hover */
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #1976D2; /* Material UI Blue 500 */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #1E88E5; /* Material UI Blue 600 */
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 220px;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .main-content {
+        padding: 40px;
+    }
+
+    .current-weather {
+        flex-direction: row;
+    }
+
+    .city-info {
+        flex-direction: row;
+    }
+
+    .search-container {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 275px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .current-weather {
+        flex-direction: column;
+    }
+
+    .city-info {
+        flex-direction: column;
+    }
+
+    .search-container {
+        flex: 1;
+        flex-direction: row;
+    }
+
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Chat message styles */
+.chat-box p {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+/* User message styles */
+.chat-box .user {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    align-self: flex-end;
+}
+
+/* Bot message styles */
+.chat-box .bot {
+    background-color: #f8d7da;
+    color: #842029;
+    align-self: flex-start;
+}
+
+/* Loader Styles */
+#loader {
+    display: none;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Unit Toggle Button Styles */
+  .unit {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background: #e0e0e0;
+  }
+  
+  .unit.active {
+    background: #3498db;
+    color: #fff;
+  }
+  

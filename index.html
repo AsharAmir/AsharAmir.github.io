@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Weather App</div>
+      <ul class="menu">
+        <hr>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="tables.html">Tables</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <header class="header">
+        <div class="logo">
+          <h1>Weather</h1>
+        </div>
+        <div class="search-container">
+          <input type="text" id="cityInput" placeholder="Search for cities" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="units-toggle">
+          <button class="unit active" id="celsiusBtn">°C</button>
+          <button class="unit" id="fahrenheitBtn">°F</button>
+        </div>
+      </header>
+
+      <div id="loader"></div>
+
+      <main class="main-content">
+        <section class="current-weather">
+          <div class="city-info">
+            <div class="temperature">
+              <div id="weatherIcon" class="weather-icon"></div>
+              <span class="temp-main" id="currentTemp">-- °C</span>
+            </div>
+            <div class="city-details">
+              <h2 id="cityName">City Name</h2>
+              <span class="temp-sub" id="tempRange">-- °C - -- °C</span>
+            </div>
+          </div>
+        </section>
+        
+        <section class="forecast">
+          <h3>Today's Forecast</h3>
+          <div class="forecast-details" id="forecastDetails">
+          </div>
+        </section>
+
+        <!-- Weather Details -->
+        <section class="weather-details">
+          <h3>Weather Details</h3>
+          <div class="details-grid">
+            <div class="detail-item">
+              <p>Feels Like</p>
+              <p id="feelsLike">-- °C</p>
+            </div>
+            <div class="detail-item">
+              <p>Pressure</p>
+              <p id="pressure">-- hPa</p>
+            </div>
+            <div class="detail-item">
+              <p>Humidity</p>
+              <p id="humidity">-- %</p>
+            </div>
+            <div class="detail-item">
+              <p>Temperature Min</p>
+              <p id="tempMin">-- °C</p>
+            </div>
+            <div class="detail-item">
+              <p>Temperature Max</p>
+              <p id="tempMax">-- °C</p>
+            </div>
+            <div class="detail-item">
+              <p>Wind Speed</p>
+              <p id="windSpeed">-- m/s</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="charts-section">
+          <div class="chart">
+            <canvas id="barChart"></canvas>
+            <p>Vertical Bar Chart</p>
+          </div>
+          <div class="chart">
+            <canvas id="doughnutChart"></canvas>
+            <p>Doughnut Chart</p>
+          </div>
+          <div class="chart">
+            <canvas id="lineChart"></canvas>
+            <p>Line Chart</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

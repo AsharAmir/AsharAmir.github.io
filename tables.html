@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://esm.run/@google/generative-ai"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Weather App</div>
+      <ul class="menu">
+        <hr>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="tables.html">Tables</a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <header class="header">
+        <div class="logo">
+          <h1>Weather</h1>
+        </div>
+        <div class="search-container">
+          <input type="text" id="cityInput" placeholder="Search for cities" />
+          <button id="searchBtn">Search</button>
+        </div>
+      </header>
+
+      <div id="loader"></div>
+
+      <section class="filter-container">
+        <button class="filter-btn" id="sortAscBtn">Sort Ascending</button>
+        <button class="filter-btn" id="sortDescBtn">Sort Descending</button>
+        <button class="filter-btn" id="filterRainBtn">Filter Rainy Days</button>
+        <button class="filter-btn" id="highestTempBtn">Show Highest Temp</button>
+      </section>
+
+      <section>
+        <table id="forecastTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Temperature</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+
+          </tbody>
+        </table>
+        <div id="pagination" class="pagination"></div> <!-- Pagination container -->
+      </section>
+      <section class="chatbot-widget">
+        <h2>Chat with Us</h2>
+        <div class="chat-container">
+          <div id="chatBox" class="chat-box">
+            <!-- Chat messages will be displayed here -->
+          </div>
+          <input type="text" id="chatInput" placeholder="Type a message" />
+          <button id="sendBtn">Send</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script type="module" src="tableScript.js"></script> 
+</body>
+</html>
